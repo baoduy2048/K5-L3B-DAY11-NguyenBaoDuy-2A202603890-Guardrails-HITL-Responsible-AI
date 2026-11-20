@@ -54,7 +54,7 @@ async def part2_guardrails():
 async def part3_assignment_suite():
     """Checkpoint 3: defense suite → outputs/results.json."""
     print("\n" + "=" * 60)
-    print("CHECKPOINT 3: Assignment suite → outputs/*.json")
+    print("CHECKPOINT 3: Assignment suite -> outputs/*.json")
     print("=" * 60)
 
     from assignment.pipeline import (
@@ -134,10 +134,10 @@ async def part4_attacks():
 
 
 async def main(parts=None):
-    setup_api_key()
-
     if parts is None:
         parts = [2, 3, 4]  # Core: CP2 → CP3 → CP4
+    if 4 in parts:
+        setup_api_key()
 
     for part in parts:
         if part == 2:
